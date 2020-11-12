@@ -1,0 +1,45 @@
+isRegistered(openid, nickname, sex, avatarUrl)#判断用户是否注册
+    接受登录用户openid; 返回是否注册
+
+register()#用户注册
+    接受用户openid, 名字, 工号, 性别; 返回注册成功或失败
+
+createGame()#创建比赛
+    接受创建比赛者的openid, 比赛名称, 个人赛/团体赛(1表示个人赛,n>1表示n人团体赛), 比赛时间, 比赛地点;返回成功或失败
+
+applySingle()#申请参加单人赛
+    接受参赛者的openid, 比赛名称; 若成功则返回个人报名编号,失败返回-1
+
+createGroup()#创建团体赛的团体
+    接受创建团体用户的openid, 比赛名称; 若成功,返回创建团体的编号,失败返回-1
+
+joinGroup()#个人加入团体
+    接受申请加入者的openid, 比赛名称, 团体编号; 返回成功或失败
+
+manageApply()#比赛管理员通过/不通过个人报名
+    接受比赛名称, 报名个人编号, 通过/不通过标志; 返回成功或失败
+
+manageGroup()#比赛管理员通过/不通过团队报名
+    接受比赛名称, 报名团队编号, 通过/不通过标志; 返回成功或失败
+
+addJudge()#添加裁判
+    接受比赛名称, 裁判工号数组; 返回成功失败
+
+getCurrentGames()#获取所有当前存在且未结束的赛事
+    不接受参数;返回所有当前赛事的json对象
+
+getGamesByAdmin()#获得某用户管理(主办)的所有赛事
+    接受主办方的openid;返回所有由该用户管理的赛事的json对象
+
+getGamesByCompetitor()#获得某用户报名或参加的所有赛事
+    接受用户的openid; 返回所有该用户正在报名或报名成功的赛事json对象
+
+getGamesByJudge()#获得某用户裁判的所有赛事
+    接受openid;返回所有裁判赛事的json对象
+
+arrangeAgendaAuto()#自动排赛程
+    接受比赛名称; 返回排赛结果json对象
+
+
+    
+
